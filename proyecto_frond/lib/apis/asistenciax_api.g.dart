@@ -13,7 +13,7 @@ class _AsistenciaxApi implements AsistenciaxApi {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://192.168.1.34:8080';
+    baseUrl ??= 'http://192.168.56.1:8080';
   }
 
   final Dio _dio;
