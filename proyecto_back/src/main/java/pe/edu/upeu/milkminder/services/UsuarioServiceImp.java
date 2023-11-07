@@ -1,9 +1,4 @@
 package pe.edu.upeu.milkminder.services;
-package pe.edu.upeu.milkminder.dtos.credentialsDto;
-package pe.edu.upeu.milkminder.dtos.CredencialDto;
-package pe.edu.upeu.milkminder.dtos.CredencialesDto;
-
-
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -117,7 +112,6 @@ public class UsuarioServiceImp implements UsuarioService {
 
         Usuario user = userMapper.usuarioCrearDtoToUser(userDto);
         user.setPassword(passwordEncoder.encode(CharBuffer.wrap(userDto.password())));
-        System.out.println("Llego.................");
         System.out.println(userDto.token());
 
         Set<Rol> roles = new HashSet<>();
