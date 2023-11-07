@@ -11,7 +11,7 @@ public interface EmpresaMapper{
     
     EmpresaDto toEmpresaDto(Empresa endtidad);
     
-    @Mapping(target = "fincaId", ignore = true)
+    @Mapping(target = "id", ignore = true)
     Empresa empresaCrearDtoToEmpresa(EmpresaDto.EmpresaCrearDto entidadCrearDto);
     
 }

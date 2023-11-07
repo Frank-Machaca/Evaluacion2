@@ -22,28 +22,25 @@ import lombok.NoArgsConstructor;
 public class Empresa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; 
-    
+    private Long id;
+
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
-    @Column(name = "nom_cort", nullable = false)
-    private String nom_cort;
-    
+    @Column(name = "nombre_corto", nullable = false)
+    private String nombreCorto;
 
-    @Column(name = "direccion_fiscal", nullable = false)
-    private String direccion_fiscal;
+    @Column(name = "direccion", nullable = false)
+    private String direccion;
 
-    @Column(name = "ruc", nullable = false, length = 12 )
+    @Column(name = "ruc", nullable = false)
     private String ruc;
-    
+
     @Column(name = "ubigeo", nullable = false)
     private String ubigeo;
-    
 
-    @JoinColumn(name = "finca_id", referencedColumnName = "id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    @JsonIgnoreProperties({"empresa", "", "", ""})
-    private Finca fincaId;  
+    private Usuario userId;
     
 }
