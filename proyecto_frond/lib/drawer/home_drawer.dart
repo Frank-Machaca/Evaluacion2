@@ -1,16 +1,14 @@
-
 import 'package:asistencia_app/theme/AppTheme.dart';
 import 'package:asistencia_app/login/login_google.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:asistencia_app/login/sign_in.dart';
 
 class HomeDrawer extends StatefulWidget {
   const HomeDrawer(
       {super.key,
-        required this.screenIndex,
-        required this.iconAnimationController,
-        required this.callBackIndex});
+      required this.screenIndex,
+      required this.iconAnimationController,
+      required this.callBackIndex});
 
   final AnimationController iconAnimationController;
   final DrawerIndex screenIndex;
@@ -35,30 +33,25 @@ class _HomeDrawerState extends State<HomeDrawer> {
         labelName: 'Principal',
         icon: Icon(Icons.home),
       ),
-      DrawerList(
+      /* DrawerList(
         index: DrawerIndex.FeedBack,
         labelName: 'Actividad',
         isAssetsImage: true,
-        imageName: 'assets/imagen/man-icon.png',
-      ),
+        imageName: 'assets/imagen/usuario.png',
+      ),*/
       DrawerList(
         index: DrawerIndex.Help,
-        labelName: 'Actividad Bloc',
+        labelName: 'Empresa',
         icon: Icon(Icons.help),
       ),
       DrawerList(
         index: DrawerIndex.Invite,
-        labelName: 'Actividad Bloc Fire',
+        labelName: 'Actividad',
         icon: Icon(Icons.group),
       ),
-      /*DrawerList(
-        index: DrawerIndex.Share,
-        labelName: 'Rate the app',
-        icon: Icon(Icons.share),
-      ),*/
       DrawerList(
         index: DrawerIndex.Testing,
-        labelName: 'Raza Bloc',
+        labelName: 'Raza',
         icon: Icon(Icons.radar),
       ),
       DrawerList(
@@ -101,15 +94,18 @@ class _HomeDrawerState extends State<HomeDrawer> {
                                   .value /
                               360),
                           child: Center(
-                            child:  imageUrl==""? CircleAvatar(
-                              backgroundImage: AssetImage('assets/imagen/man-icon.png'),
-                              radius: 40,
-                              backgroundColor: Colors.transparent,
-                            ): CircleAvatar(
-                              backgroundImage: NetworkImage(imageUrl!!),
-                              radius: 40,
-                              backgroundColor: Colors.transparent,
-                            ),
+                            child: imageUrl == ""
+                                ? CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage('assets/imagen/usuario.png'),
+                                    radius: 40,
+                                    backgroundColor: Colors.transparent,
+                                  )
+                                : CircleAvatar(
+                                    backgroundImage: NetworkImage(imageUrl!!),
+                                    radius: 40,
+                                    backgroundColor: Colors.transparent,
+                                  ),
                           ),
                         ),
                       );
@@ -118,7 +114,11 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8, left: 4),
                     child: Text(
-                      (name==null?"Anonimo":name)! + (" ") + (email==null?"Anomim":email)!,
+                      (name == null ? "Frank" : name)! +
+                          (" ") +
+                          (email == null
+                              ? "frank.machaca@upeu.edu.pe"
+                              : email)!,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
@@ -210,7 +210,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   Container(
                     width: 6.0,
                     height: 46.0,
-
                   ),
                   const Padding(
                     padding: EdgeInsets.all(4.0),

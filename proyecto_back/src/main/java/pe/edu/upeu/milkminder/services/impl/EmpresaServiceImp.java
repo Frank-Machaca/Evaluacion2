@@ -39,7 +39,7 @@ public class EmpresaServiceImp implements EmpresaService {
     public Empresa save(EmpresaDto.EmpresaCrearDto empresa) {
 
         Empresa matEnt = empresaMapper.empresaCrearDtoToEmpresa(empresa);
-        matEnt.setUserId(userService.getUsuarioById(empresa.userId()));
+        matEnt.setUserId(userService.getUsuarioById(empresa.fincaId()));
         try {
             return empresaRepo.save(matEnt);
         } catch (Exception e) {
@@ -82,10 +82,10 @@ public class EmpresaServiceImp implements EmpresaService {
                 .orElseThrow(() -> new ResourceNotFoundException("Company not exist with id :" + id));
 
         empresaX.setNombre(empresa.nombre());
-        empresaX.setNombreCorto(empresa.nombreCorto());
+        empresaX.setNombreCorto(empresa.nom_cort());
         empresaX.setRuc(empresa.ruc());
         empresaX.setUbigeo(empresa.ubigeo());
-        empresaX.setUserId(userService.getUsuarioById(empresa.userId()));
+        empresaX.setUserId(userService.getUsuarioById(empresa.id()));
 
         return empresaRepo.save(empresaX);
     }

@@ -13,7 +13,7 @@ class _EmpresaApi implements EmpresaApi {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://192.168.56.1:9090';
+    baseUrl ??= 'http://192.168.1.45:9090';
   }
 
   final Dio _dio;

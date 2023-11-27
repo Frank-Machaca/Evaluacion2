@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Examen Moviles 2",
+      title: "Proyecto Integrador",
       theme: AppTheme.themeData,
       debugShowCheckedModeBanner: false,
       home: MainLogin(),

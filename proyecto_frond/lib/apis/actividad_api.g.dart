@@ -13,7 +13,7 @@ class _ActividadApi implements ActividadApi {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://192.168.56.1:8080';
+    baseUrl ??= 'http://192.168.1.45:8080';
   }
 
   final Dio _dio;
@@ -57,6 +57,7 @@ class _ActividadApi implements ActividadApi {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     _data.addAll(actividad.toJson());
+
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<ActividadModelo>(Options(
       method: 'POST',

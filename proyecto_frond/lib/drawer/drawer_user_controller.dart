@@ -1,7 +1,6 @@
 import 'package:asistencia_app/theme/AppTheme.dart';
 import 'package:asistencia_app/drawer/home_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:toast/toast.dart';
 
 class DrawerUserController extends StatefulWidget {
   const DrawerUserController({
@@ -81,12 +80,10 @@ class _DrawerUserControllerState extends State<DrawerUserController>
       });
     WidgetsBinding.instance?.addPostFrameCallback((_) => getInitState());
     super.initState();
-
   }
 
-  void acciondw(){
-    setState(() {
-    });
+  void acciondw() {
+    setState(() {});
   }
 
   Future<bool> getInitState() async {
@@ -174,7 +171,9 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                           height: AppBar().preferredSize.height - 8,
                           child: MaterialApp(
                             debugShowCheckedModeBanner: false,
-                            themeMode: AppTheme.useLightMode ? ThemeMode.light : ThemeMode.dark,
+                            themeMode: AppTheme.useLightMode
+                                ? ThemeMode.light
+                                : ThemeMode.dark,
                             theme: AppTheme.themeDataLight,
                             darkTheme: AppTheme.themeDataDark,
                             //color: Colors.transparent,
@@ -187,7 +186,8 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                                     ? widget.menuView
                                     : AnimatedIcon(
                                         color: AppTheme.colorMenu,
-                                        icon: widget.animatedIconData ?? AnimatedIcons.arrow_menu,
+                                        icon: widget.animatedIconData ??
+                                            AnimatedIcons.arrow_menu,
                                         progress: iconAnimationController!),
                               ),
                               onTap: () {
